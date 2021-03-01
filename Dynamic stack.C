@@ -42,12 +42,12 @@ top
 	  8|    |      **Now can store 4 more elements**
 	  7|    |
 	  6|    |
-   top	  5| 30   |
-	  4| 25   |
-	  3| 20   |
-	  2| 15   |
-	  1| 10   |
-	  0| 5   |
+   top	  5| 30 |
+	  4| 25 |
+	  3| 20 |
+	  2| 15 |
+	  1| 10 |
+	  0| 5  |
 
 
  -> this is process repeats.
@@ -59,7 +59,7 @@ top
 #include <stdlib.h>
 
 //  concept of structure  is used
-//  malloc and realloc fucniton are used to allocate the memroy
+//  malloc and realloc function are used to allocate the memroy
 //dynamically
 
 struct stack
@@ -76,14 +76,13 @@ element* stackFull(element *stack,int *capacity)
 	 stack=(element*)realloc(stack,2*(*capacity)*sizeof(element));
 	 (*capacity)=(*capacity)*2; //*capacity=4
 	 return stack;
-
-
 }
 
-   //Function Returning pointer
+//Function Returning pointer
 // Function retures address as return value
 //In this case  Fucniton returns address of structure varible
 //*capcity represents the capacity of the stack
+
 element* push(element *stack,int *top,int item,int *capcity)
 {
 	if(*top>=(*capcity)-1) // 3>=3    // stack should get doubled
@@ -98,6 +97,7 @@ element* push(element *stack,int *top,int item,int *capcity)
 	return stack;
 
 }
+
 int pop(element *stack,int *top)
 {
 	int item_del;
@@ -110,6 +110,7 @@ int pop(element *stack,int *top)
 	(*top)--;
 	return item_del;
 }
+
 void display(element *stack,int top)
 {
 	int i;
@@ -124,6 +125,7 @@ void display(element *stack,int top)
 	}
 
 }
+
 void main()
 {
 	int top=-1;
@@ -134,16 +136,16 @@ void main()
 	element *stack; //pointer to structure.
 	//sizeof the element is 2 bytes
 
-
-
 	stack=(element*)malloc(sizeof(element)*capacity);
 	// 2 bytes of memory allocated and its base address is stored
 	//in pointer stack.
+
 	if(stack==NULL)
 	{
 	    printf(" Moemory not suff...\n");
 	    exit(0);
 	}
+
 	for(;;)
 	{
 		printf("1:push 2:pop 3:display 4:exit\n");
@@ -172,9 +174,6 @@ void main()
 		       case 4:exit(0);
 
 		}
-
 	}
-
-
 }
 
