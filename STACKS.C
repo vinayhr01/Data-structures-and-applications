@@ -12,13 +12,12 @@ deletion from one end called top of the stack.
 Example: 1. Books kept one over another
 	 2. Biscuits paked and ane side open
 
-
 Operations on stacks
 1. Push -> Insert operation
 2. pop  -> Delete operation
 3. Display -> Function display only display the elements of the stack.
 */
-// array implementation of stack
+// Array implementation of stack
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -49,7 +48,6 @@ void pop(int a[],int *top)
 	ele= a[*top];
 	(*top)--;
 	printf("The element deleted%d\t",ele);
-
 }
 
 void display(int a[],int top)
