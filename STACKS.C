@@ -9,8 +9,8 @@ FILO-> First in Last out data struture
 A stack is an ordered collecction of items, which allows the insertion and
 deletion from one end called top of the stack.
 
-Example:1.  books kept one over another
-	2.  Biscuits paked and ane side open
+Example: 1. Books kept one over another
+	 2. Biscuits paked and ane side open
 
 
 Operations on stacks
@@ -36,6 +36,7 @@ void push(int a[],int *top,int ele)
      (*top)++;	 // *top is 0
      a[*top]=ele;
 }
+
 void pop(int a[],int *top)
 {
 	int ele;
@@ -50,6 +51,7 @@ void pop(int a[],int *top)
 	printf("The element deleted%d\t",ele);
 
 }
+
 void display(int a[],int top)
 {
 	int i;
@@ -63,7 +65,6 @@ void display(int a[],int top)
 	{
 		printf("%d",a[i]);
 	}
-
 }
 
 void main()
@@ -89,27 +90,12 @@ void main()
 
 			case 2: pop(a,&top);
 				break;
-			case 3: display(a,top);
+			
+                        case 3: display(a,top);
 				break;
-			case 4: exit(0);
+			
+                        case 4: exit(0);
 
 		}
-
 	}
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
