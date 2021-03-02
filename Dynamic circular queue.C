@@ -124,7 +124,6 @@ void copy(ele *start,ele *end, ele *dest)
 	}
 }
 
-
 ele*  Qfull(ele *q,int* front,int* rear)
 {
 	ele *nq;//new queue
@@ -150,6 +149,7 @@ ele*  Qfull(ele *q,int* front,int* rear)
 	return (nq);
 
 }
+
 ele*  addq(ele q[],ele item,int* rear, int* front,int* count)
 {
 	*rear=(*rear+1)%MAXQS;
@@ -162,10 +162,8 @@ ele*  addq(ele q[],ele item,int* rear, int* front,int* count)
 	}
 	q[*rear]=item;
 	return q;
-
-
-
 }
+
 void deleq(ele q[],int* front,int* rear,int* count)
 {
 	int i;
@@ -192,10 +190,7 @@ void disp(ele q[],int front,int rear,int count)
 	{
 		printf("%d\t",q[i].info);
 	}
-
 }
-
-
 
 void main()
 {
@@ -249,13 +244,5 @@ void main()
 			exit(0);
 
 	}
-      }
-
+    }
 }
-
-
-
-
-
-
-
