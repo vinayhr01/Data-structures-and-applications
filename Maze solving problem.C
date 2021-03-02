@@ -9,7 +9,8 @@ diffcult to find ones ways.
 2. ones represent the barriers
 
 Genenral  way finding path in maze:
-   enterence
+   entrance|
+           V
 	   0    0    0   0    0   1
 
 	   1    1    1   1    1   0
@@ -26,7 +27,7 @@ Genenral  way finding path in maze:
 
 	   0    1    1   1    1   1
 
-	   1    0    0   0    0   0  exit
+	   1    0    0   0    0   0 -> exit
 
 
 
@@ -130,9 +131,6 @@ int maze[20][20]={
 		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 		};
 
-
-
-
 void main()
 {
 	int row,col,nextRow,nextCol,dir,found=FALSE,top,i;
@@ -177,9 +175,7 @@ void main()
 			}
 			else
 				++dir;
-
 		}
-
 	}
 
 	if(found)
@@ -192,16 +188,7 @@ void main()
 		}
 		printf("%3d %3d", row,col);
 		printf("%3d %3d", EXIT_ROW,EXIT_COL);
-
 	}
 	else
 		printf("Maze doesnot have path\n");
-
 }
-
-
-
-
-
-
-
