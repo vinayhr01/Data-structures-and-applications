@@ -121,39 +121,45 @@ int n;//No of stacks required
 int item;// item to be inserted
 int i;//Indicates particular stack
 
-
 void insert()
 {
 	printf("Enter the item\n");
 	scanf("%d",&item);
+
 	if(r[i]==boundary[i+1])
 	{
 		printf("i=%d",i);
 		printf("Q full");
 		return;
 	}
+
 	r[i]++;
 	mq[r[i]]=item;
 }
+
 void delet()
 {
 	int item_deleted;
+
 	if(r[i]==boundary[i])
 	{
 		printf(" the i the Q is empty%d",i);
 		return;
 	}
+
 	item_deleted=mq[f[i]];
-	printf("The deleted_item%d",item_deleted);
+	
+        printf("The deleted_item%d",item_deleted);
+
 	f[i]++;
+
 	if(f[i]>r[i])   // if f excedes r        if(f>r) {f=0 r=-1
 	{
 		r[i]=boundary[i];
 		f[i]=boundary[i]+1;
 	}
-
-
 }
+
 void display()
 {
 	int j;
@@ -169,12 +175,10 @@ void display()
 	}
 }
 
-
 void main()
 {
 	int choice;//switch
 	int j;//creation of multiple stacks
-
 
 	printf("Enter No of queues required\n");
 	scanf("%d",&n);
@@ -183,6 +187,7 @@ void main()
 	{
 		boundary[j]=f[j]=r[j]=(Max_size/n)*j-1;
 	}
+
 	for(j=0;j<n;j++)
 	{
 		f[j]=f[j]+1;
@@ -191,16 +196,19 @@ void main()
 	for(;;)
 	{
 		printf("Queues available\n");
+
 		for(j=0;j<n;j++)
 		{
 			printf("%d\t",j);
 		}
+
 		printf("enter the Queue no\n");
 		scanf("%d",&i);
 
 		printf("1:insert\n 2:delete\n 3:display\n 4:exitn");
 		printf("Enter the choice\n");
 		scanf("%d",&choice);
+
 		switch(choice)
 		{
 			case 1: insert();
@@ -215,10 +223,6 @@ void main()
 			case 4: exit(0);
 
 		}
-
-
 	}
-
 }
-
 //Note: At a time user can work with once  Queue
