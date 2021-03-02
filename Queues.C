@@ -17,7 +17,7 @@ Queue operations : The queue operatons are
 	| 5  | 10 | 15  | 20 | 25 |    Q_FULL
 	...........................
 				R -> rear end
-	case1
+	case1:
 	  F
 	  0   1  2   3  4
 	 ..................
@@ -102,8 +102,8 @@ Queue operations : The queue operatons are
 
 #include <stdio.h>
 #include <stdlib.h>
-
 #define Q_size 5
+
 void insert(int q[],int item,int *r)
 {
 	if(*r==Q_size-1)
@@ -114,6 +114,7 @@ void insert(int q[],int item,int *r)
 	*r=*r+1;
 	q[*r]=item;
 }
+
 int delet(int q[],int *f,int *r)
 {
 	if(*f>*r)
@@ -122,6 +123,7 @@ int delet(int q[],int *f,int *r)
 	}
 	return q[(*f)++];
 }
+
 void display(int q[],int f,int r)
 {
 	int i;
@@ -135,9 +137,6 @@ void display(int q[],int f,int r)
 		printf("%d\t",q[i]);
 	}
 }
-
-
-
 
 void main()
 {
@@ -157,18 +156,19 @@ void main()
 				scanf("%d",&item);
 				insert(q,item,&r);
 				break;
+
 			case 2: item=delet(q,&f,&r);
 				if(item==-1)
 					printf("q empty\n");
 				else
 					printf("item_deleted=%d",item);
 				break;
+
 			case 3: display(q,f,r);
 				break;
-			case 4:exit(0);
+			
+                        case 4:exit(0);
 
 		}
 	}
-
-
 }
