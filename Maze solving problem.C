@@ -171,7 +171,6 @@ void main()
 				row=nextRow;
 				col=nextCol;
 				dir=0;
-
 			}
 			else
 				++dir;
