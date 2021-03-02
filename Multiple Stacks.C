@@ -123,6 +123,7 @@ void push()
 	top[i]++;
 	ms[top[i]]=item;
 }
+
 void pop()
 {
 	int item_deleted;
@@ -136,20 +137,22 @@ void pop()
 	printf("item_deleted=%d",item_deleted);
 	top[i]--;
 }
+
 void display()
 {
 	int j=0;
+
 	if(top[i]==boundary[i])
 	{
 		printf("i=%d",i);
 		printf(" the stack is empty\n");
-		return ;
+		return;
 	}
+
 	for(j=boundary[i]+1;j<=top[i];j++)
 	{
 		printf("%d\t",ms[j]);
 	}
-
 }
 
 void main()
@@ -166,17 +169,22 @@ void main()
 		boundary[j]=top[j]=Max_size/n*j-1;// assume max_size is 20
 		// it is the size of the array
 	}
+
 	for(;;)
 	{
 		printf("stacks available\n");
+
 		for(j=0;j<n;j++)
 		{
 			printf("%d\t",j);
 		}
+
 		printf("enter the stack no\n");
 		scanf("%d",&i);
+
 		printf("1:push 2:pop 3:display\ 4exitn");
 		scanf("%d",&choice);
+
 		switch(choice)
 		{
 			case 1: push();
@@ -191,12 +199,6 @@ void main()
 			case 4: exit(0);
 
 		}
-
-
 	}
-
 }
 //Note: At a time user can work with only one stack
-
-
-
