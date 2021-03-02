@@ -149,6 +149,7 @@ void cinsert_rear(int cq[],int item,int *r,int *count)
 	cq[*r]=item;
 	(*count)++;
 }
+
 void cdelete_front(int cq[],int *f,int *r,int *count)
 {
 	if(*count==0)
@@ -165,6 +166,7 @@ void cdelete_front(int cq[],int *f,int *r,int *count)
 	}
 	(*count)--;
 }
+
 void display(int cq[],int f,int count)
 {
 	int i,t;
@@ -180,7 +182,6 @@ void display(int cq[],int f,int count)
 		printf("%d",cq[t]);
 		t=(t+1)%q_size;
 	}
-
 }
 
 void main()
@@ -203,15 +204,14 @@ void main()
 				scanf("%d",&item);
 				cinsert_rear(cq,item,&r,&count);
 				break;
+
 			case 2: cdelete_front(cq,&f,&r,&count);
 				break;
+
 			case 3: display(cq,f,count);
 				break;
+
 			case 4:exit(0);
 		}
 	}
-
-
-
-
 }
