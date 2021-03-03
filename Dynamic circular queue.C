@@ -95,8 +95,10 @@ struct x   //x is the name of the strcture
 {
 	int info;           //2 bytes
 };
-typedef struct x ele;     // ele acts as datatypee
-/*Function returning pointer
+typedef struct x ele; 
+
+/*ele acts as datatypee
+Function returning pointer
 	  f
 0    1    2
 ...............
@@ -111,16 +113,20 @@ nq
 ................................
 r	     0         2
 */
+
 void copy(ele *start,ele *end, ele *dest)
 {
 	int i;
+
 	printf("While coping elements\n");
+
 	for(i=0;(start+i)<end; )
 	{
 		dest[i]=start[i];
-		printf("%d%d",i,dest[i].info);
-		i=i+1;
 
+		printf("%d%d",i,dest[i].info);
+
+		i=i+1;
 	}
 }
 
@@ -129,12 +135,15 @@ ele*  Qfull(ele *q,int* front,int* rear)
 	ele *nq;//new queue
 	int start;         // 3           2
 	nq=(ele*)malloc(2*MAXQS*sizeof(ele)); // 12 bytes
+
 	// cpacity of doubled
 	if(nq==NULL)
 	{
 		printf("Memory for nq is insufficient");
 	}
+
 	start=(*front+1)%MAXQS;//START=0
+
 	if(start<2)          // 0   0   3-1
 		copy(q+start, q+start+MAXQS-1,nq);
 	else
@@ -142,24 +151,27 @@ ele*  Qfull(ele *q,int* front,int* rear)
 		copy(q+start,q+MAXQS,nq);
 		copy(q,q+*rear+1,nq+MAXQS-start);
 	}
+
 	*front=2*MAXQS-1;
 	*rear=MAXQS-1;
+
 	MAXQS=MAXQS*2;
+
 	free(q);
 	return (nq);
-
 }
 
 ele*  addq(ele q[],ele item,int* rear, int* front,int* count)
 {
 	*rear=(*rear+1)%MAXQS;
+
 	if(*front==*rear)
 	{
 		printf("Queue is Full\n");
-		 q= Qfull(q,front,rear);// this function  to double
-		 //the capcity and also does right segment shifting
-
+		 q= Qfull(q,front,rear);/*this function  to double
+		 the capcity and also does right segment shifting*/
 	}
+
 	q[*rear]=item;
 	return q;
 }
@@ -167,25 +179,32 @@ ele*  addq(ele q[],ele item,int* rear, int* front,int* count)
 void deleq(ele q[],int* front,int* rear,int* count)
 {
 	int i;
+
 	if(*front == *rear)
 	{
 		printf("Q is empty\n");
 		return;
 	}
+
 	*front= (*front+1)%MAXQS;
+
 	printf("The item deleted %d",q[*front]);
+
 	q[*front].info=0;
 }
 
 void disp(ele q[],int front,int rear,int count)
 {
 	int i;
+
 	if(front==rear)
 	{
 		printf("cirular Q is empty\n");
 		return;
 	}
+
 	printf(" Queue contents are\n");
+
 	for(i=0;i<MAXQS;i++)
 	{
 		printf("%d\t",q[i].info);
@@ -199,38 +218,51 @@ void main()
       int ch; // switch
       int count=0;// count keep track of no of elements in the q
       int i;
+
       clrscr();
+
       /*initallly assumation is content is 0 to indicate no element
 	    f
 	    0   1   2
 	  ............
-	 | 5  | 10 | 15|  // 6bytes
+	 | 5  | 10 | 15|  6bytes
 	  ............
 	  r  */
+
       front=0;
       rear=0;
-      //dynamic memory allocation
-		       //	2 *    3
-      q=	 (ele*)malloc(sizeof(ele)*MAXQS);
-       // at any point pointer can be replaced by array, array also can
-       //replaccd pointer
+
+      /*dynamic memory allocation
+      2 * 3*/
+
+      q=(ele*)malloc(sizeof(ele)*MAXQS);
+
+       /* at any point pointer can be replaced by array, array also can
+       replaccd pointer*/
+
       for(i=0;i<MAXQS;i++)
-	q[i].info=0;
+          q[i].info=0;
 
       for(;;)
       {
 	printf("\n1:Insert Element \t 2: Delete Element\n");
+
 	printf("3:Display Element \t 4: Exit\n");
+
 	printf("Enter the choice\n");
+
 	scanf("%d",&ch);
+
 	switch(ch)
 	{
 		case 1: printf("Enter the item to be inserted\n");
 			scanf("%d",&(item.info));
-			// the function addq adds the item to the q
-			// passsing item is passsing structure varible as
-			//parameter
-			// passing q is call by reference
+
+			/* the function addq adds the item to the q
+		        passsing item is passsing structure varible as
+			parameter
+			passing q is call by reference*/
+
 			q=addq(q,item, &rear, &front,&count);
 			break;
 
