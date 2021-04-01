@@ -1,4 +1,4 @@
-Pointer and Arrays:                         =
+/*Pointer and Arrays:                         =
 ......................
 In pointer we store address,In arrays we store elements.
 -> Pointer holds the adress
@@ -57,10 +57,8 @@ void main()
 			printf("%d",*(*(a+i)+j));;
 		}
 	}
-
-
 }
-
+*/
 // program to replace 2d array by pointer using fucntions
 
 #include <stdio.h>
@@ -128,8 +126,3 @@ void print(int a[][10],int m,int n)
 		printf("\n");
 	}
 }
-
-
-
-
-
