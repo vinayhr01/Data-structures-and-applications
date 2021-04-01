@@ -1,4 +1,4 @@
-/Pointer and Arrays:                         =
+/*Pointer and Arrays:                         =
 ......................
 In pointer we store address,In arrays we store elements.
 -> Pointer holds the adress
@@ -41,7 +41,7 @@ In general
 3rd arrays
 &a[i][j][k] -> (((a+i)+j)+k)   -> *(*(*(a+i)+j)+k)
 
-//porgram to read and print array elemtns using pointer
+//program to read and print array elemtns using pointer
 
 #include <stdio.h>
 
@@ -64,10 +64,13 @@ void main()
 	     printf("\t%d\t",*(a+i));
 	}
 
-}                                          */
+}*/    
+                                      
 // program to read and read and print array elements using function and
 //pointer
+
 #include <stdio.h>
+
 void read(int *,int );
 void print(int *,int );
 
@@ -79,10 +82,11 @@ void main()
 
 	printf("Enter n elements\n");
 	scanf("%d",&n);
+
 	read(a,n);
 	print(a,n);
-
 }
+
 void read(int *p,int n)
 {
 	int i;
@@ -92,6 +96,7 @@ void read(int *p,int n)
 	     scanf("%d",(p+i));
 	}
 }
+
 void print(int *p,int n)
 {
 	int i;
@@ -101,13 +106,3 @@ void print(int *p,int n)
 	     printf("\t%d",*(p+i));
 	}
 }
-
-
-
-
-
-
-
-
-
-
