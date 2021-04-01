@@ -48,9 +48,4 @@ void main()
 	printf("Array elements are\n");
 	for(i=0;i<n;i++)
 		printf("%d",*(ptr+i));
-
-
-
 }
-
-
