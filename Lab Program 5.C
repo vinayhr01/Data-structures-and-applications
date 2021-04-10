@@ -110,23 +110,23 @@ void main()
 // Solving Tower of Hanoi problem with n disks 
 #include <stdio.h>
 #include <stdlib.h>
-void TOH(int n,char source,char dest,char inter)
+void TOH(int n,char source,char inter,char dest)
 {
 	if(n==1)
 	{
 		printf("Move disc %d from %c to%c\nf", n,source,dest);
 		return;
 	}
-	TOH(n-1,source,dest,inter);
+	TOH(n-1,source,inter,dest);
 	printf("Move disc %d from %c to%c\n", n,source,dest);
-	TOH(n-1,inter,source,dest);
+	TOH(n-1,inter,dest,source);
 }
 void main()
 {
 	int n;//No of disks
 	printf("Enter no of discs\n");
 	scanf("%d",&n);
-	TOH(n,'A','C','B');
+	TOH(n,'A','B','C');
 }
 
 
