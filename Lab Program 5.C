@@ -128,9 +128,3 @@ void main()
 	scanf("%d",&n);
 	TOH(n,'A','B','C');
 }
-
-
-
-
-
-
